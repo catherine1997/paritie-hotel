@@ -1,0 +1,1 @@
+# paritie-hotel
