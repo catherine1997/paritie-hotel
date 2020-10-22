@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:login/register/register.dart';
 
 void main() {
   runApp(MyApp());
@@ -48,6 +49,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  bool checkBoxValue =false;
   int _counter = 0;
 
   void _incrementCounter() {
@@ -76,6 +78,7 @@ class _MyHomePageState extends State<MyHomePage> {
       //   title: Text(widget.title),
       // ),
       body: Center(
+        child:SingleChildScrollView(
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.
         child: Column(
@@ -84,38 +87,61 @@ class _MyHomePageState extends State<MyHomePage> {
             new Padding(
               padding: EdgeInsets.all(80),
               child: new Image(
-                width: 180,
-                height: 180,
+                width: 170,
+                height: 150,
                 image: AssetImage("assets/image/flutter1.png"),
+              ),
+            ),
+      SizedBox(
+        width: 340,
+        child:TextFormField(
+          decoration: InputDecoration(
+              icon: Icon(Icons.group,
+              size: 18.5,),
+              labelText: 'Enter your username'
+          ),
+        ),
+      ),
+
+            SizedBox(
+              width: 340,
+              child:Padding(
+                padding: const EdgeInsets.fromLTRB(0,18.5,0,0),
+                child: TextFormField(
+                  decoration: InputDecoration(
+                      icon: Icon(Icons.vpn_key_outlined,
+                        size: 18.5,),
+                      labelText: 'Enter your password'
+                  ),
+                ),
               ),
             ),
 
   new Padding(
-    padding: EdgeInsetsDirectional.fromSTEB(0, 180, 0, 0),
+    padding: EdgeInsets.fromLTRB(0, 85.9, 0, 0),
     child: Container(
       height: 50.0,
       child: RaisedButton(
           elevation: 3,
         onPressed: () {
-          print("pressed");
+          print("u clicked Sign In");
         },
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.0)),
         padding: EdgeInsets.all(0.0),
         child: Ink(
           decoration: BoxDecoration(
               gradient: LinearGradient(colors: [Colors.lightBlueAccent, Colors.lightBlueAccent],
-                begin: Alignment.centerLeft,
-                end: Alignment.centerRight,
               ),
               borderRadius: BorderRadius.circular(8.0)
           ),
           child: Container(
-            constraints: BoxConstraints(maxWidth: 300.0, minHeight: 50.0),
+            constraints: BoxConstraints(maxWidth: 350.0, minHeight: 50.0),
             alignment: Alignment.center,
             child: Text(
-              "Sign In",
+              "Log In",
               textAlign: TextAlign.center,
               style: TextStyle(
+                  fontSize: 22.0,
                   color: Colors.white
               ),
             ),
@@ -125,31 +151,31 @@ class _MyHomePageState extends State<MyHomePage> {
     ),
   ),
             new Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0, 30, 0, 0),
+              padding: EdgeInsets.fromLTRB(0, 27, 0, 0),
                 child: Container(
                   height: 50.0,
                   child: RaisedButton(
                     elevation: 3,
                     onPressed: () {
-                      print("pressed");
+                      print("Sign Up");
+                     Navigator.push(context, MaterialPageRoute(builder: (context)=>register()));
                     },
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.0)),
                     padding: EdgeInsets.all(0.0),
                     child: Ink(
                       decoration: BoxDecoration(
                           gradient: LinearGradient(colors: [Colors.lightBlueAccent, Colors.lightBlueAccent],
-                            begin: Alignment.centerLeft,
-                            end: Alignment.centerRight,
                           ),
                           borderRadius: BorderRadius.circular(8.0)
                       ),
                       child: Container(
-                        constraints: BoxConstraints(maxWidth: 300.0, minHeight: 50.0),
+                        constraints: BoxConstraints(maxWidth: 350.0, minHeight: 50.0),
                         alignment: Alignment.center,
                         child: Text(
                           "Sign Up",
                           textAlign: TextAlign.center,
                           style: TextStyle(
+                              fontSize: 22.0,
                               color: Colors.white
                           ),
                         ),
@@ -161,12 +187,12 @@ class _MyHomePageState extends State<MyHomePage> {
       new Row(
         children:[
            new Padding(
-             padding: EdgeInsets.fromLTRB(100, 11.5, 0, 0),
+             padding: EdgeInsets.fromLTRB(100, 10, 0, 0),
             child: Text("Forgot Password?"),
            ),
 
           new Padding(
-            padding: EdgeInsets.fromLTRB(5, 11.5, 0, 0),
+            padding: EdgeInsets.fromLTRB(5, 10, 0, 0),
             child: GestureDetector(
               onTap: (){
                 print("Tapped");
@@ -176,7 +202,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 style: new TextStyle(
                     decoration:TextDecoration.underline,
                     color: Colors.lightBlueAccent,
-                    fontSize: 15.5,
+                    fontSize: 16.0,
                     fontWeight: FontWeight.bold),
               ),
             ),
@@ -184,10 +210,9 @@ class _MyHomePageState extends State<MyHomePage> {
         ]
       ),
 
-
           ],
         ),
-
+        ),
       ),
       // floatingActionButton: FloatingActionButton(
       //   onPressed: _incrementCounter,
