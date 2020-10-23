@@ -1,131 +1,165 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-class register extends StatelessWidget {
-  bool checkbox=false;
+import 'package:login/loginpage/loginpage.dart';
+
+class register extends StatefulWidget {
+  @override
+  _registerState createState() => _registerState();
+}
+
+class _registerState extends State<register> {
   @override
   Widget build(BuildContext context) {
+    int group = 1;
+    bool checkbox = false;
     return Scaffold(
       // appBar: AppBar(
-      //   title: Text('Register Screen'),
+      //   // Here we take the value from the MyHomePage object that was created by
+      //   // the App.build method, and use it to set our appbar title.
+      //   title: Text(widget.title),
       // ),
-      body:  Center(
-        child:SingleChildScrollView(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: <Widget>[
-            new Padding(
-              padding: EdgeInsets.all(80),
-              child: new Image(
-                width: 130,
-                height: 130,
-                image: AssetImage("assets/image/vector.png"),
-              ),
-            ),
-            SizedBox(
-              width: 340,
-              child:TextFormField(
-                decoration: InputDecoration(
-                    labelText: 'Enter your Fullname'
+      body: Center(
+        child: SingleChildScrollView(
+          // Center is a layout widget. It takes a single child and positions it
+          // in the middle of the parent.
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: <Widget>[
+              new Padding(
+                padding: EdgeInsets.all(80),
+                child: new Image(
+                  width: 170,
+                  height: 150,
+                  image: AssetImage("assets/image/flutter1.png"),
                 ),
               ),
-            ),
-            SizedBox(
-              width: 340,
-              child:TextFormField(
-                decoration: InputDecoration(
-                    labelText: 'Enter your E-mail Address'
+              SizedBox(
+                width: 340,
+                child: TextFormField(
+                  decoration: InputDecoration(
+                      icon: Icon(
+                        Icons.person,
+                        size: 15,
+                      ),
+                      labelText: 'Enter your username'),
+                  enableSuggestions: false,
+                  autocorrect: false,
+                  // validator: (input) => !input.contains('@') ? 'Invalid Username': null,
+                  // onSaved: (input) => _username =input,
                 ),
               ),
-            ),
-            SizedBox(
-              width: 340,
-              child:TextFormField(
-                decoration: InputDecoration(
-                    icon: Icon(Icons.vpn_key_outlined,
-                      size: 18.5,),
-                    labelText: 'Enter your Password'
-                ),
-              ),
-            ),
-            SizedBox(
-              width: 340,
-              child:TextFormField(
-                decoration: InputDecoration(
-                  icon: Icon(Icons.vpn_key_outlined,
-                  size: 18.5,),
-                    labelText: 'Enter your Confirm Password'
-                ),
-              ),
-            ),
-            SizedBox(
-              width: 340,
-              child:TextFormField(
-                decoration: InputDecoration(
-                    labelText:'choose your username'
-                ),
-              ),
-            ),
-
-            Padding(
-              padding: const EdgeInsets.fromLTRB(27, 40, 0, 0),
-              child: new Row(
-
-                children:[
-                  Center(
-                    child: new Checkbox(value: checkbox,
-                        activeColor: Colors.green,
-                        onChanged:(bool newValue){
-                          checkbox = newValue;
-                        }),
-                  ),
-                  Text("Accept our Terms and Conditions",
-
-                  ),
-                  IconButton(
-                    iconSize: 20,
-                    icon: Icon(Icons.check),
-                  ),
-                ],
-              ),
-            ),
-            new Padding(
-              padding: EdgeInsets.fromLTRB(0, 20, 0, 0),
-              child: Container(
-                height: 50.0,
-                child: RaisedButton(
-                  elevation: 3,
-                  onPressed: () {
-                    print("Register");
-                  },
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.0)),
-                  padding: EdgeInsets.all(0.0),
-                  child: Ink(
-                    decoration: BoxDecoration(
-                        gradient: LinearGradient(colors: [Colors.lightBlueAccent, Colors.lightBlueAccent],
-                          begin: Alignment.centerLeft,
-                          end: Alignment.centerRight,
+              SizedBox(
+                width: 340,
+                child: Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 18.5, 0, 0),
+                  child: TextFormField(
+                    decoration: InputDecoration(
+                        icon: Icon(
+                          Icons.vpn_key_outlined,
+                          size: 15,
                         ),
-                        borderRadius: BorderRadius.circular(8.0)
-                    ),
-                    child: Container(
-                      constraints: BoxConstraints(maxWidth: 350.0, minHeight: 50.0),
-                      alignment: Alignment.center,
-                      child: Text(
-                        "Register",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontSize: 25,
-                            color: Colors.white
+                        labelText: 'Enter your password'),
+
+                    obscureText: true,
+                    // validator: (input) => input.length <5 ? 'you need least five characters': null,
+                    // onSaved: (input) => _password =input,
+                  ),
+                ),
+              ),
+              new Padding(
+                padding: EdgeInsets.fromLTRB(0, 85.9, 0, 0),
+                child: Container(
+                  height: 50.0,
+                  child: RaisedButton(
+                    elevation: 3,
+                    onPressed: null,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8.0)),
+                    padding: EdgeInsets.all(0.0),
+                    child: Ink(
+                      decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                            colors: [
+                              Colors.lightBlueAccent,
+                              Colors.lightBlueAccent
+                            ],
+                          ),
+                          borderRadius: BorderRadius.circular(8.0)),
+                      child: Container(
+                        constraints:
+                            BoxConstraints(maxWidth: 350.0, minHeight: 50.0),
+                        alignment: Alignment.center,
+                        child: Text(
+                          "Log In",
+                          textAlign: TextAlign.center,
+                          style: TextStyle(fontSize: 22.0, color: Colors.white),
                         ),
                       ),
                     ),
                   ),
                 ),
               ),
-            ),
-
-
-          ],
-        ),
+              new Padding(
+                padding: EdgeInsets.fromLTRB(0, 27, 0, 0),
+                child: Container(
+                  height: 50.0,
+                  child: RaisedButton(
+                    elevation: 3,
+                    onPressed: () {
+                      print("Sign Up");
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => loginpage()));
+                    },
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8.0)),
+                    padding: EdgeInsets.all(0.0),
+                    child: Ink(
+                      decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                            colors: [
+                              Colors.lightBlueAccent,
+                              Colors.lightBlueAccent
+                            ],
+                          ),
+                          borderRadius: BorderRadius.circular(8.0)),
+                      child: Container(
+                        constraints:
+                            BoxConstraints(maxWidth: 350.0, minHeight: 50.0),
+                        alignment: Alignment.center,
+                        child: Text(
+                          "Sign Up",
+                          textAlign: TextAlign.center,
+                          style: TextStyle(fontSize: 22.0, color: Colors.white),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              new Row(children: [
+                new Padding(
+                  padding: EdgeInsets.fromLTRB(100, 10, 0, 0),
+                  child: Text("Forgot Password?"),
+                ),
+                new Padding(
+                  padding: EdgeInsets.fromLTRB(5, 10, 0, 0),
+                  child: GestureDetector(
+                    onTap: () {
+                      print("Tapped");
+                    },
+                    child: Text(
+                      "Reset Password",
+                      style: new TextStyle(
+                          decoration: TextDecoration.underline,
+                          color: Colors.lightBlueAccent,
+                          fontSize: 16.0,
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                ),
+              ]),
+            ],
+          ),
         ),
       ),
     );
