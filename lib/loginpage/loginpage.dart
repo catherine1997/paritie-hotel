@@ -32,8 +32,9 @@ class _loginpageState extends State<loginpage> {
                 child:TextFormField(
                   decoration: InputDecoration(
                       icon: Icon(Icons.person_add_alt,
+                        color: Colors.lightBlueAccent,
                         size: 15,),
-                      labelText: 'Enter your Fullname'
+                      labelText: 'Full Name'
                   ),
                 ),
               ),
@@ -42,8 +43,9 @@ class _loginpageState extends State<loginpage> {
                 child:TextFormField(
                   decoration: InputDecoration(
                       icon: Icon(Icons.mail,
+                        color: Colors.lightBlueAccent,
                         size: 15,),
-                      labelText: 'Enter your E-mail Address'
+                      labelText: ' E-mail Address'
                   ),
                 ),
               ),
@@ -52,8 +54,9 @@ class _loginpageState extends State<loginpage> {
                 child:TextFormField(
                   decoration: InputDecoration(
                       icon: Icon(Icons.vpn_key_outlined,
+                        color: Colors.lightBlueAccent,
                         size: 15,),
-                      labelText: 'Enter your Password'
+                      labelText: 'Password'
                   ),
                   obscureText: true,
                 ),
@@ -62,9 +65,10 @@ class _loginpageState extends State<loginpage> {
                 width: 340,
                 child:TextFormField(
                   decoration: InputDecoration(
-                      icon: Icon(Icons.vpn_key_outlined,
+                      icon: Icon(Icons.vpn_lock,
+                        color: Colors.lightBlueAccent,
                         size: 15,),
-                      labelText: 'Enter your Confirm Password'
+                      labelText: 'Confirm Password'
                   ),
                   // validator: (input) => !input.contains('@') ? 'Not a valid Email': null,
                   // onSaved: (input) => _password =input,
@@ -76,8 +80,9 @@ class _loginpageState extends State<loginpage> {
                 child:TextFormField(
                   decoration: InputDecoration(
                       icon: Icon(Icons.drive_file_rename_outline,
-                        size: 15,),
-                      labelText:'choose your username'
+                        color: Colors.lightBlueAccent,
+                        size: 16,),
+                      labelText:'Username'
                   ),
                 ),
               ),

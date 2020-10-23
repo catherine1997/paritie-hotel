@@ -28,8 +28,8 @@ class _registerState extends State<register> {
               new Padding(
                 padding: EdgeInsets.all(80),
                 child: new Image(
-                  width: 170,
-                  height: 150,
+                  width: 165.9,
+                  height: 145.5,
                   image: AssetImage("assets/image/flutter1.png"),
                 ),
               ),
@@ -38,14 +38,15 @@ class _registerState extends State<register> {
                 child: TextFormField(
                   decoration: InputDecoration(
                       icon: Icon(
-                        Icons.person,
+
+                        Icons.mail,
                         size: 15,
+                        color: Colors.lightBlueAccent,
                       ),
-                      labelText: 'Enter your username'),
+                      labelText: 'E-mail Address',
+                  ),
                   enableSuggestions: false,
                   autocorrect: false,
-                  // validator: (input) => !input.contains('@') ? 'Invalid Username': null,
-                  // onSaved: (input) => _username =input,
                 ),
               ),
               SizedBox(
@@ -57,12 +58,10 @@ class _registerState extends State<register> {
                         icon: Icon(
                           Icons.vpn_key_outlined,
                           size: 15,
+                          color: Colors.lightBlueAccent,
                         ),
-                        labelText: 'Enter your password'),
-
+                        labelText: 'Enter your Password'),
                     obscureText: true,
-                    // validator: (input) => input.length <5 ? 'you need least five characters': null,
-                    // onSaved: (input) => _password =input,
                   ),
                 ),
               ),
@@ -72,7 +71,11 @@ class _registerState extends State<register> {
                   height: 50.0,
                   child: RaisedButton(
                     elevation: 3,
-                    onPressed: null,
+                    onPressed: (){
+                      setState(() {
+                        print("login");
+                      });
+                    },
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(8.0)),
                     padding: EdgeInsets.all(0.0),
